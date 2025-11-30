@@ -1,15 +1,14 @@
 package saucelabs.runner;
 
-import org.junit.runner.RunWith;
-import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
+import net.serenitybdd.cucumber.CucumberWithSerenity;
+import org.junit.runner.RunWith;
 
-@RunWith(Cucumber.class)
+@RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "saucelabs.glue",
-        plugin = {"pretty", "html:target/cucumber-report.html"},
-        monochrome = true
+        plugin = {"pretty"}
 )
 public class TestRunner {
 }
